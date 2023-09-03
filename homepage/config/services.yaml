@@ -1,0 +1,258 @@
+- Media:
+  - Plex:
+      icon: plex.png
+      description: Media Server
+      href: <redacted>
+      ping: <redacted>
+      namespace: plex
+      app: plex
+      widget:
+        type: plex
+        url: <redacted>
+        key: <redacted>
+  - Tautulli:
+      icon: tautulli.png
+      description: Plex Stats
+      href: <redacted>
+      ping: <redacted>
+      namespace: tautulli
+      app: tautulli
+      widget: 
+        type: tautulli
+        url: <redacted>
+        key: <redacted>
+  - Immich:
+      icon: immich.png
+      description: Photo Hosting
+      href: <redacted>
+      ping: <redacted>
+      namespace: immich
+      app: immich
+      widget:
+        type: immich
+        url: <redacted>
+        key: <redacted>
+- Manage:
+  - Authentik:
+      icon: authentik-light.png
+      description: SSO / OpenID Provider
+      href: <redacted>
+      ping: <redacted>
+      namespace: auth
+      app: authentik
+      widget:
+        type: authentik
+        url: <redacted>
+        key: <redacted>
+  - Keel:
+      icon: https://keel.sh/img/logo_small.png
+      description: Kubernetes Image Manager
+      href: <redacted>
+      namespace: keel
+      app: keel
+  - Omada:
+      icon: omada.png
+      description: Networking Controller
+      href: <redacted>
+      ping: <redacted>
+      namespace: omada
+      app: omada
+      widget:
+        type: omada
+        url: <redacted>
+        username: <redacted>
+        password: <redacted>
+        site: Home
+  - Rundeck:
+      icon: rundeck.png
+      description: Node Management
+  - DDNS:
+      icon: ddns-updater.png
+      description: Dynamic DNS Updater
+      href: <redacted>
+      ping: <redacted>
+      namespace: ddns
+      app: ddns
+- Monitor:
+  - Cameras:
+      icon: synology-surveillance-station.png
+      description: Security System
+      href: <redacted>
+      ping: <redacted>
+  - Uptime:
+      icon: uptime-kuma.png
+      description: Service Uptime Monitor
+      href: <redacted>
+      ping: <redacted>
+      namespace: uptime
+      app: uptime-kuma
+      widget:
+        type: uptimekuma
+        url: <redacted>
+        slug: k3s
+  - Traefik:
+      icon: traefik.png
+      description: Reverse Proxy
+      href: <redacted>
+      namespace: kube-system
+      app: traefik
+      widget:
+        type: traefik
+        url: <redacted>
+  - Grafana:
+      icon: grafana.png
+      description: Cluster Metrics
+      href: <redacted>
+      ping: <redacted>
+      widget:
+        type: grafana
+        url: <redacted>
+        username: <redacted>
+        password: <redacted>
+- Databases:
+  - EA MariaDB:
+      icon: mariadb.png
+      description: EA Dedicated Database
+      namespace: everyday-wordpress
+      app: ea-database
+  - MariaDB:
+      icon: mariadb.png
+      description: Cluster MySQL
+      namespace: mariadb
+      app: mariadb
+  - MongoDB:
+      icon: mongodb.png
+      description: Cluster MongoDB
+      namespace: mongodb
+      app: mongodb
+  - Postgres:
+      icon: postgres.png
+      description: Cluster Postgres
+      namespace: postgres
+      app: postgres
+  - Redis:
+      icon: redis.png
+      description: Cluster Redis
+      namespace: redis
+      app: redis
+  - NATS:
+      icon: https://raw.githubusercontent.com/docker-library/docs/ad703934a62fabf54452755c8486698ff6fc5cc2/nats/logo.png
+      description: Messenger
+      namespace: nats
+      app: nats-box
+      podSelector: >-
+          app in (
+            nats-box
+          )          
+- Productivity:
+  - OCIS:
+      icon: owncloud.png
+      description: OwnCloud Infinite Scale
+      href: <redacted>
+      ping: <redacted>
+      namespace: owncloud
+      app: ocis
+      podSelector: >-
+          app.kubernetes.io/instance in (
+            owncloud-deploy
+          )
+  - BitWarden:
+      icon: bitwarden.png
+      description: Password Manager
+      href: <redacted>
+      ping: <redacted>
+      namespace: warden
+      app: vaultwarden
+  - Everyday Audiophile:
+      icon: <redacted>
+      description: Blog
+      href: <redacted>
+      ping: <redacted>
+      namespace: everyday-wordpress
+      app: ea-wordpress
+  - Git:
+      icon: github.png
+      description: Please Self Host me
+      href: <redacted>
+  - SearXNG:
+      icon: searxng.png
+      description: Search Engine
+      href: <redacted>
+      ping: <redacted>
+      namespace: search
+      app: searxng
+  - Grocy:
+      icon: grocy.png
+      description: Inventory Management
+      href: <redacted>
+      ping: <redacted>
+      namespace: grocy
+      app: grocy
+- Storage:
+  - Primary:
+      icon: synology-dsm.png
+      description: Synology NAS (128TB)
+      href: <redacted>
+      ping: <redacted>
+      widget:
+        type: diskstation
+        url: <redacted>
+        username: <redacted>
+        password: <redacted>
+        volume: volume_1
+  - Cloud:
+      icon: synology-dsm.png
+      description: Synology NAS (160TB)
+      href: <redacted>
+      ping: <redacted>
+      widget:
+        type: diskstation
+        url: <redacted>
+        username: <redacted>
+        password: <redacted>
+        volume: volume_1
+- Automation:
+  - HomeAssistant:
+      icon: home-assistant.png
+      description: Smart Home All The Things
+      href: <redacted>
+      ping: <redacted>
+      namespace: homeassistant
+      app: homeassistant
+  - Scrypted:
+      icon: scrypted.png
+      description: Camera Re-Streamer
+      href: <redacted>
+      namespace: scrypted
+      app: scrypted
+  - Mosquitto:
+      icon: eclipse-mosquitto.png
+      description: MQTT Broker
+      namespace: mqtt
+      app: mosquitto
+- Desktops:
+  - Ubuntu01:
+      icon: ubuntu.png
+      href: <redacted>
+      namespace: kasm
+      app: kasm-ubuntu01
+  - Brave:
+      icon: brave.png
+      href: <redacted>
+      namespace: kasm
+      app: kasm-brave
+- Downloads:
+  - Transmission:
+      icon: transmission.png
+      description: Friends Downloader
+      href: <redacted>
+      ping: <redacted>
+      namespace: transmission
+      app: transmission
+  - Transmission 2:
+      icon: transmission.png
+      description: Family Downloader
+      href: <redacted>
+      ping: <redacted>
+      namespace: transmission
+      app: transmission-td

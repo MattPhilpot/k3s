@@ -1,0 +1,10 @@
+title: <redacted>
+background: https://stsci-opo.org/STScI-01GVGH2NDBHPT12FQPQA6AFZGC.png
+cardBlur: xl
+headerStyle: boxedWidgets
+providers:
+  longhorn:
+    url: <redacted>
+layout:
+  Media:
+    style: row

@@ -1,0 +1,25 @@
+- search:
+    provider: custom
+    url: <redacted>
+    target: _blank
+- kubernetes:
+    cluster:
+      cpu: true
+      label: cluster
+      memory: true
+      show: true
+      showLabel: true
+    nodes:
+      cpu: true
+      memory: true
+      show: true
+      showLabel: true
+- longhorn:
+    # Show the expanded view
+    expanded: true
+    # Shows a node representing the aggregate values
+    total: true
+    # Shows the node names as labels
+    labels: true
+    # Show the nodes
+    nodes: true
