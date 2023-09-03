@@ -1,0 +1,151 @@
+additionalContainers: {}
+affinity: {}
+annotations: {}
+authentik:
+  email:
+    from: ''
+    host: ''
+    password: ''
+    port: 587
+    timeout: 30
+    use_ssl: false
+    use_tls: false
+    username: ''
+  error_reporting:
+    enabled: false
+    environment: k8s
+    send_pii: false
+  geoip: /geoip/GeoLite2-City.mmdb
+  log_level: info
+  outposts:
+    container_image_base: ghcr.io/goauthentik/%(type)s:%(version)s
+  postgresql:
+    host: <internal IP address>
+    name: <redacted>
+    password: <redacted>
+    port: <redacted>
+    user: authentik_user
+  redis:
+    host: <internal IP address>
+    password: ''
+  secret_key: <redacted>
+autoscaling:
+  server:
+    enabled: false
+    maxReplicas: 5
+    minReplicas: 1
+    targetCPUUtilizationPercentage: 50
+  worker:
+    enabled: false
+    maxReplicas: 5
+    minReplicas: 1
+    targetCPUUtilizationPercentage: 80
+blueprints: []
+containerSecurityContext: {}
+env: {}
+envFrom: []
+envValueFrom: {}
+geoip:
+  accountId: ''
+  containerSecurityContext: {}
+  editionIds: GeoLite2-City
+  enabled: false
+  image: maxmindinc/geoipupdate:v4.8
+  licenseKey: ''
+  updateInterval: 8
+image:
+  digest: ''
+  pullPolicy: IfNotPresent
+  pullSecrets: []
+  repository: ghcr.io/goauthentik/server
+  tag: 2023.6.1
+ingress:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  enabled: true
+  hosts:
+    - host: auth.mydomain.com
+      paths:
+        - path: /
+          pathType: Prefix
+  ingressClassName: traefik
+  labels: {}
+  tls:
+    - hosts:
+        - auth.mydomain.com
+      secretName: authentik-tls
+initContainers: {}
+livenessProbe:
+  enabled: true
+  httpGet:
+    path: /-/health/live/
+    port: http
+  initialDelaySeconds: 5
+  periodSeconds: 10
+nodeSelector: {}
+podAnnotations: {}
+postgresql:
+  enabled: false
+  image:
+    tag: 11.19.0-debian-11-r4
+  postgresqlDatabase: authentik
+  postgresqlMaxConnections: 500
+  postgresqlUsername: authentik
+priorityClassName: null
+prometheus:
+  rules:
+    create: false
+    labels: {}
+  serviceMonitor:
+    create: false
+    interval: 30s
+    labels: {}
+    scrapeTimeout: 3s
+readinessProbe:
+  enabled: true
+  httpGet:
+    path: /-/health/ready/
+    port: http
+  periodSeconds: 10
+redis:
+  architecture: standalone
+  auth:
+    enabled: false
+  enabled: false
+  image:
+    tag: 6.2.10-debian-11-r13
+replicas: 1
+resources:
+  server: {}
+  worker: {}
+securityContext: {}
+service:
+  annotations: {}
+  enabled: true
+  labels: {}
+  name: authentik-lb
+  port: 80
+  protocol: TCP
+  type: LoadBalancer
+serviceAccount:
+  annotations: {}
+  create: true
+  fullnameOverride: authentik
+  nameOverride: authentik
+  serviceAccountSecret:
+    enabled: false
+startupProbe:
+  enabled: true
+  failureThreshold: 60
+  httpGet:
+    path: /-/health/live/
+    port: http
+  periodSeconds: 5
+tolerations: []
+volumeMounts: []
+volumes: []
+worker:
+  containerSecurityContext: {}
+  priorityClassName: null
+  replicas: 1
+  securityContext: {}
